@@ -4,7 +4,8 @@
   "description": "react框架实现后台管理系统",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node_modules/.bin/webpack-dev-server",
+    "dist": "node_modules/.bin/webpack -p"
   },
   "repository": {
     "type": "git",
@@ -12,10 +13,6 @@
   },
   "author": "",
   "license": "ISC",
-  "script":{
-    "dev": "node_modules/.bin/webpack-dev-server",
-    "dist": "node_modules/.bin/webpack -p"
-  },
   "bugs": {
     "url": "https://github.com/aojiaodemeng/react-admin-rosen/issues"
   },
@@ -37,8 +34,8 @@
   },
   "dependencies": {
     "babel-preset-react": "6.24.1",
-    "font-awesome": "^4.7.0",
     "react": "16.2.0",
-    "react-dom": "16.2.0"
+    "react-dom": "16.2.0",
+    "react-router-dom": "^4.2.2"
   }
 }
