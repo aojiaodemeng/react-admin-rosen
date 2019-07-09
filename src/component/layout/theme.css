@@ -39,7 +39,6 @@ a,a:hover{
     top: 60px;
 }
 
-
 /*头部*/
 .top-navbar {
     position: fixed;
@@ -203,7 +202,8 @@ ul.nav.nav-second-level.collapse.in {
 /*面包屑*/
 .page-header {
     padding-bottom: 9px;
-    margin: 10px 0 20px;
+    /*margin: 10px 0 20px;*/
+    font-size: 1.8rem;
     border-bottom: 1px solid transparent;
 }
 /*响应式布局*/

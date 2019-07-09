@@ -2,11 +2,11 @@ class MUtil{
 	request(param){
 		return new Promise((resolve,reject) => {
 			$.ajax({
-				type: param.type         || 'get',
-				url: param.url           || '',
-				dataType: param.dataType || 'json',
-				data: param.data         || null,
-				success(res){
+				type     : param.type         || 'get',
+				url      : param.url           || '',
+				dataType : param.dataType || 'json',
+				data     : param.data         || null,
+				success  :res=>{
 					if(0===res.status){
 						//数据请求成功
 						typeof resolve === 'function' && resolve(res.data,res.msg);
@@ -17,7 +17,7 @@ class MUtil{
 						typeof reject === 'function' && resolve(res.msg || res.data);
 					}
 				},
-				error(err){
+				error    :err=>{
 					typeof reject === 'function' && resolve(err.statusText);
 				}
 			});		

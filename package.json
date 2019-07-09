@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "babel-preset-react": "6.24.1",
+    "rc-pagination": "^1.20.1",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-router-dom": "^4.2.2"
