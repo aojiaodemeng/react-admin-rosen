@@ -1,29 +1,30 @@
 class MUtil{
 	request(param){
-		return new Promise((resolve,reject) => {
-			$.ajax({
-				type     : param.type         || 'get',
-				url      : param.url           || '',
-				dataType : param.dataType || 'json',
-				data     : param.data         || null,
-				success  :res=>{
-					if(0===res.status){
-						//数据请求成功
-						typeof resolve === 'function' && resolve(res.data,res.msg);
-					}else if(10===res.status){
-						//没有登陆状态，强制登陆
-						this.doLogin();
-					}else{
-						typeof reject === 'function' && resolve(res.msg || res.data);
-					}
-				},
-				error    :err=>{
-					typeof reject === 'function' && resolve(err.statusText);
-				}
-			});		
-		
-		});
-	}
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                type        : param.type        || 'get',
+                url         : param.url         || '',
+                dataType    : param.dataType    || 'json',
+                data        : param.data        || null,
+                success     : res => {
+                    // 数据请求成功
+                    if(0 === res.status){
+                        typeof resolve === 'function' && resolve(res.data, res.msg);
+                    }
+                    // 没有登录状态，强制登录
+                    else if(10 === res.status){
+                        this.doLogin();
+                    }
+                    else{
+                        typeof reject === 'function' && reject(res.msg || res.data);
+                    }
+                },
+                error       : err => {
+                    typeof reject === 'function' && reject(err.statusText);
+                }
+            });
+        });
+    }
 	// 跳转登陆
 	doLogin(){
 		window.location.href="/login?redirect="+encodeURIComonent(window.location.pathname)
@@ -37,9 +38,13 @@ class MUtil{
             //result : ['param=123','','123','&']
         return result ? decodeURIComponent(result[2]) : null;
 	}
+	//成功提示
+	successTips(successMsg){
+		alert(successMsg || '操作成功！');
+	}
 	//错误提示
 	errorTips(errMsg){
-		alert(errMsg || '好像哪里不对了~')
+		alert(errMsg || '好像哪里不对了~');
 	}
 	//存储
 	setStorage(name, data){
