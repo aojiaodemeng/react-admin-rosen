@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: WEBPACK_ENV === 'dev'
-      ? '/dist/': '//s.jianliwu.com/admin-ve-fe/dist/',
+      ? '/dist/': '//s.jianliwu.com/admin-v2-fe/dist/',
     filename: 'js/app.js'
   },
   resolve:{
